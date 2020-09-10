@@ -371,6 +371,8 @@ class GoogleSignIn {
   Future<GoogleSignInAccount> disconnect() =>
       _addMethodCall(GoogleSignInPlatform.instance.disconnect);
 
+  Future<void> clearCache() => clearAuthCache();
+
   /// Requests the user grants additional Oauth [scopes].
   Future<bool> requestScopes(List<String> scopes) async {
     await _ensureInitialized();
